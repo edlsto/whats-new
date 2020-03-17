@@ -6,33 +6,28 @@ import technology from "../../data/technology";
 import science from "../../data/science";
 import "./App.css";
 import NewsContainer from "../NewsContainer/NewsContainer";
+import Menu from "../Menu/Menu";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      local: local,
-      entertainment: entertainment,
-      health: health,
-      technology: technology,
-      science: science
+      content: local
     };
   }
+
+  selectTopic = topic => {
+    this.setState({ content: topic });
+  };
 
   render() {
     return (
       <div>
         <header>What's New</header>
         <main>
-          <aside>
-            <div>Local News</div>
-            <div>Technology</div>
-            <div>Entertainment</div>
-            <div>Science</div>
-            <div>Health</div>
-          </aside>
+          <Menu selectTopic={this.selectTopic} />
           <div className="app">
-            <NewsContainer articles={this.state.local} />
+            <NewsContainer articles={this.state.content} />
           </div>
         </main>
       </div>
