@@ -4,7 +4,7 @@ aside {
 }
 
 aside div {
-  font-size: 1.3em;
   margin-bottom: 1em;
+  font-size: 1.3em;
   cursor: pointer;
 }
