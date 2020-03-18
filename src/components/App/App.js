@@ -1,9 +1,4 @@
 import React, { Component } from "react";
-import local from "../../data/local";
-import entertainment from "../../data/entertainment";
-import health from "../../data/health";
-import technology from "../../data/technology";
-import science from "../../data/science";
 import "./App.css";
 import NewsContainer from "../NewsContainer/NewsContainer";
 import Menu from "../Menu/Menu";
@@ -13,42 +8,38 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: {
-        local: local,
-        entertainment: entertainment,
-        health: health,
-        technology: technology,
-        science: science,
-        search: []
-      },
+      local: [],
       currentTopic: "local"
     };
   }
 
+  componentDidMount() {
+    fetch("https://whats-new-api.herokuapp.com/api/v1/news")
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          local: data.local,
+          entertainment: data.entertainment,
+          health: data.health,
+          technology: data.technology,
+          science: data.science
+        })
+      );
+  }
+
   searchStories = searchTerm => {
-    const matchedStories = this.state.data[this.state.currentTopic].filter(
-      story => {
-        const regex = new RegExp(searchTerm, "gi");
-        return story.headline.match(regex);
-      }
-    );
+    const matchedStories = this.state[this.state.currentTopic].filter(story => {
+      const regex = new RegExp(searchTerm, "gi");
+      return story.headline.match(regex);
+    });
     this.setState({
-      data: {
-        local: local,
-        entertainment: entertainment,
-        health: health,
-        technology: technology,
-        science: science,
-        search: matchedStories
-      },
+      search: matchedStories,
       currentTopic: "search"
     });
   };
 
   selectTopic = topic => {
-    console.log(topic);
     this.setState({ currentTopic: topic });
-    console.log(this.state);
   };
 
   render() {
@@ -63,9 +54,7 @@ class App extends Component {
         <main>
           <Menu selectTopic={this.selectTopic} />
           <div className="app">
-            <NewsContainer
-              articles={this.state.data[this.state.currentTopic]}
-            />
+            <NewsContainer articles={this.state[this.state.currentTopic]} />
           </div>
         </main>
       </div>
