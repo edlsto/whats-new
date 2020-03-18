@@ -13,15 +13,15 @@ img {
 }
 
 button {
-  background: rgba(3, 194, 3, 0.767);
+  margin-top: 1em;
   padding: 0.6em;
   border-radius: 0.2em;
-  margin-top: 1em;
+  background: rgba(3, 194, 3, 0.767);
 }
 
 a {
-  text-decoration: none;
   color: white;
-  text-transform: uppercase;
   font-size: 1.3em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
