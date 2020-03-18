@@ -8,24 +8,23 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   flex-wrap: wrap;
-  background: #ffffff;
-  text-align: center;
-  color: black;
-  justify-content: space-between;
   padding: 0 4em;
+  background: #ffffff;
+  color: black;
+  text-align: center;
 }
 
 header {
   height: 1.2em;
+  padding: 0.2em;
+  margin-bottom: 0.6em;
   font-family: "Patua One", cursive;
   font-size: 3em;
-  margin-bottom: 0.6em;
-  padding: 0.2em;
 }
 
 main {
-  width: 100%;
   display: flex;
+  width: 100%;
 }
 
 .header-search-bar {
