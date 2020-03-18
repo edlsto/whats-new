@@ -25,7 +25,6 @@ class SearchForm extends Component {
     event.preventDefault();
     const searchTerm = this.state.searchTerm;
     this.setState({ searchTerm: "" });
-
     this.props.searchStories(searchTerm);
   };
 
