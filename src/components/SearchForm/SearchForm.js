@@ -14,14 +14,19 @@ class SearchForm extends Component {
   };
 
   handleKeyUp = event => {
+    const searchTerm = this.state.searchTerm;
     if (event.which === 13) {
-      this.props.searchStories(this.state.searchTerm);
+      this.setState({ searchTerm: "" });
+      this.props.searchStories(searchTerm);
     }
   };
 
   submitSearchTerm = event => {
     event.preventDefault();
-    this.props.searchStories(this.state.searchTerm);
+    const searchTerm = this.state.searchTerm;
+    this.setState({ searchTerm: "" });
+
+    this.props.searchStories(searchTerm);
   };
 
   render() {
@@ -31,6 +36,7 @@ class SearchForm extends Component {
           placeholder="Search"
           onChange={this.updateState}
           onKeyUp={this.handleKeyUp}
+          value={this.state.searchTerm}
         ></input>
         <button className="search-btn" onClick={this.submitSearchTerm}>
           Search

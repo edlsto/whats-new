@@ -1,0 +1,10 @@
+aside {
+  width: 20%;
+  padding-left: 2em;
+}
+
+aside div {
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}

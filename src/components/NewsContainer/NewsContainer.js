@@ -9,6 +9,7 @@ const NewsContainer = props => {
       description={article.description}
       url={article.url}
       img={article.img}
+      key={article.id}
     />
   ));
 };
