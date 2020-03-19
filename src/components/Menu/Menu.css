@@ -7,4 +7,11 @@ aside div {
   margin-bottom: 1em;
   font-size: 1.3em;
   cursor: pointer;
+  padding: 0.4em 1em 0.5em 1em;
+  border-radius: 1.3em;
+}
+
+.active {
+  background: rgba(3, 194, 3, 0.767);
+  color: white;
 }
