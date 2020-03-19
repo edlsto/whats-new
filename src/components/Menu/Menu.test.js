@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 
 describe("Form", () => {
   it("renders the text we expect", () => {
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <Menu selectTopic={jest.fn()} currentTopic={jest.fn()} />
     );
     const localNews = getByText("Local news");
