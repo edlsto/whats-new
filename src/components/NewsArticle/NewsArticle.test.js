@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 
 describe("NewsArticle", () => {
   it("text of headline and description are rendered", () => {
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <NewsArticle
         headline={"Here is a headline"}
         description={"My description goes here"}
@@ -21,6 +21,5 @@ describe("NewsArticle", () => {
     expect(headline).toBeInTheDocument();
     expect(description).toBeInTheDocument();
     expect(getByText("Read more")).toBeInTheDocument();
-    debug();
   });
 });
