@@ -16,15 +16,7 @@ class App extends Component {
   componentDidMount() {
     fetch("https://whats-new-api.herokuapp.com/api/v1/news")
       .then(response => response.json())
-      .then(data =>
-        this.setState({
-          local: data.local,
-          entertainment: data.entertainment,
-          health: data.health,
-          technology: data.technology,
-          science: data.science
-        })
-      );
+      .then(data => this.setState(data));
   }
 
   searchStories = searchTerm => {
@@ -52,7 +44,10 @@ class App extends Component {
           </div>
         </div>
         <main>
-          <Menu selectTopic={this.selectTopic} />
+          <Menu
+            selectTopic={this.selectTopic}
+            currentTopic={this.state.currentTopic}
+          />
           <div className="app">
             <NewsContainer articles={this.state[this.state.currentTopic]} />
           </div>
