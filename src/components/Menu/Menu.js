@@ -1,59 +1,47 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Menu.css";
+import handleClick from "./handleClick";
 
-class Menu extends Component {
-  constructor(props) {
-    super();
-  }
-
-  handleClick = e => {
-    console.log(this.props);
-    this.props.selectTopic(e.target.getAttribute("section"));
-  };
-
-  render() {
-    return (
-      <aside>
-        <div
-          onClick={e => this.handleClick(e)}
-          section="local"
-          className={this.props.currentTopic === "local" ? "active" : ""}
-        >
-          Local news
-        </div>
-        <div
-          onClick={e => this.handleClick(e)}
-          section="technology"
-          className={this.props.currentTopic === "technology" ? "active" : ""}
-        >
-          Technology
-        </div>
-        <div
-          onClick={e => this.handleClick(e)}
-          section="entertainment"
-          className={
-            this.props.currentTopic === "entertainment" ? "active" : ""
-          }
-        >
-          Entertainment
-        </div>
-        <div
-          onClick={e => this.handleClick(e)}
-          section="science"
-          className={this.props.currentTopic === "science" ? "active" : ""}
-        >
-          Science
-        </div>
-        <div
-          onClick={e => this.handleClick(e)}
-          section="health"
-          className={this.props.currentTopic === "health" ? "active" : ""}
-        >
-          Health
-        </div>
-      </aside>
-    );
-  }
-}
+const Menu = props => {
+  return (
+    <aside>
+      <div
+        onClick={e => handleClick(props, e)}
+        section="local"
+        className={props.currentTopic === "local" ? "active" : ""}
+      >
+        Local news
+      </div>
+      <div
+        onClick={e => handleClick(props, e)}
+        section="technology"
+        className={props.currentTopic === "technology" ? "active" : ""}
+      >
+        Technology
+      </div>
+      <div
+        onClick={e => handleClick(props, e)}
+        section="entertainment"
+        className={props.currentTopic === "entertainment" ? "active" : ""}
+      >
+        Entertainment
+      </div>
+      <div
+        onClick={e => handleClick(props, e)}
+        section="science"
+        className={props.currentTopic === "science" ? "active" : ""}
+      >
+        Science
+      </div>
+      <div
+        onClick={e => handleClick(props, e)}
+        section="health"
+        className={props.currentTopic === "health" ? "active" : ""}
+      >
+        Health
+      </div>
+    </aside>
+  );
+};
 
 export default Menu;

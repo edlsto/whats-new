@@ -1,27 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import "./NewsArticle.css";
+import addDefaultSrc from "./addDefaultSrc";
 
-class NewsArticle extends Component {
-  constructor(props) {
-    super();
-  }
-
-  addDefaultSrc(e) {
-    e.target.src = "https://bitsofco.de/content/images/2018/12/broken-1.png";
-  }
-
-  render() {
-    return (
-      <div className="news-article">
-        <img src={this.props.img} onError={this.addDefaultSrc} alt="" />
-        <h2>{this.props.headline}</h2>
-        <p>{this.props.description}</p>
-        <button>
-          <a href={this.props.url}>Read more</a>
-        </button>
-      </div>
-    );
-  }
-}
+const NewsArticle = props => {
+  return (
+    <div className="news-article">
+      <img src={props.img} onError={addDefaultSrc} alt="" />
+      <h2>{props.headline}</h2>
+      <p>{props.description}</p>
+      <button>
+        <a href={props.url}>Read more</a>
+      </button>
+    </div>
+  );
+};
 
 export default NewsArticle;
