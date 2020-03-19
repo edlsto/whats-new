@@ -44,5 +44,7 @@ describe("NewsArticle", () => {
     );
     expect(headline1).toBeInTheDocument();
     expect(description1).toBeInTheDocument();
+    expect(headline2).toBeInTheDocument();
+    expect(description2).toBeInTheDocument();
   });
 });
