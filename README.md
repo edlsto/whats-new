@@ -21,7 +21,7 @@ Extensions completed including the search functionality and using fetch to get d
 
 3. Run `npm install`
 
-4. Run `npm start.`
+4. Run `npm start`
 
 5. Open http://localhost:3000/ in your browser.
 
