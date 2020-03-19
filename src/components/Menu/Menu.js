@@ -6,7 +6,7 @@ const Menu = props => {
   return (
     <aside>
       <div
-        onClick={e => handleClick(props, e)}˝
+        onClick={e => handleClick(props, e)}
         section="local"
         className={props.currentTopic === "local" ? "active" : ""}
       >
