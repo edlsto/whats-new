@@ -27,4 +27,4 @@ Extensions completed including the search functionality and using fetch to get d
 
 ## Screenshot of the app
 
-<img width="1370" alt="Screen Shot 2020-03-19 at 4 08 28 PM" src="https://user-images.githubusercontent.com/4350550/77119378-f668ea00-69fb-11ea-8a21-8cb6a5f93fa7.png">
+<img width="1290" alt="Screen Shot 2020-03-19 at 4 29 10 PM" src="https://user-images.githubusercontent.com/4350550/77120616-e56da800-69fe-11ea-94aa-d6b68098a7a9.png">
